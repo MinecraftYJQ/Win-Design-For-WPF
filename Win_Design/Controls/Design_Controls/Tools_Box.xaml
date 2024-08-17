@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" Width="160">
     <Grid>
-        <Button Content="Button" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
-        <Button Content="Label" Margin="10,45,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
-        <Button Content="TextBox" Margin="10,80,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+        <Button Content="Button" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Click="Button_Click"/>
+        <Button Content="Label" Margin="10,45,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Click="Button_Click_1"/>
+        <Button Content="TextBox" Margin="10,80,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Click="Button_Click_2"/>
 
     </Grid>
 </UserControl>

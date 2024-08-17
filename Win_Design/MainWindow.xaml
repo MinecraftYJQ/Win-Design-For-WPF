@@ -13,6 +13,9 @@
         Title="Win-Design" Height="520" Width="830" MinWidth="830" MinHeight="520" WindowStartupLocation="CenterScreen">
     <Grid>
         <ui:Frame x:Name="Main_Frame" Content="Frame" NavigationUIVisibility="Hidden"/>
+        <Button Margin="0,0,10,10" VerticalAlignment="Bottom" Height="37" Click="Button_Click" HorizontalAlignment="Right" Width="37">
+            <ui:FontIcon Icon="{x:Static ui:FluentSystemIcons.DarkTheme_20_Filled}" HorizontalAlignment="Center" Height="14" Width="28"/>
+        </Button>
 
     </Grid>
 </Window>

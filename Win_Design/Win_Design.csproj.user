@@ -39,6 +39,9 @@
     <Compile Update="Windows\Add_Project.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Control_Setting\Add_Control.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Work\Export_Design.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -78,6 +81,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Add_Project.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Control_Setting\Add_Control.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Work\Export_Design.xaml">

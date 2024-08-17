@@ -26,6 +26,17 @@ namespace Win_Design
             InitializeComponent();
             GL.Frame = Main_Frame;
             GL.Frame.Navigate(new Main_Page(), null, new DrillInNavigationTransitionInfo());
+            Task.Run(() =>
+            {
+                while (true)
+                {
+                    this.Dispatcher.Invoke(new Action(() =>
+                    {
+                        Title = "Win-Design By:Minecraft一角钱";
+                    }));
+                    Thread.Sleep(2000);
+                }
+            });
             try
             {
                 if (File.ReadAllText("Theme") == "Light")
@@ -41,6 +52,19 @@ namespace Win_Design
             {
                 ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (ThemeManager.Current.ApplicationTheme == ApplicationTheme.Dark)
+            {
+                ThemeManager.Current.ApplicationTheme = ApplicationTheme.Light;
+            }
+            else
+            {
+                ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
+            }
+            File.WriteAllText("Theme", ThemeManager.Current.ApplicationTheme.ToString());
         }
     }
 }

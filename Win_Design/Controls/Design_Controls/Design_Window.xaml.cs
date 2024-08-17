@@ -1,4 +1,5 @@
 ﻿using iNKORE.UI.WPF.Helpers;
+using iNKORE.UI.WPF.Modern.Controls;
 using iNKORE.UI.WPF.Modern.Controls.Primitives;
 using Newtonsoft.Json;
 using System;
@@ -57,7 +58,10 @@ namespace Win_Design.Controls.Design_Controls
                             Content = item.Text,
                             HorizontalAlignment = HorizontalAlignment.Left,
                             VerticalAlignment = VerticalAlignment.Top,
-                            Margin =new Thickness(item.X,item.Y,0,0)
+                            Margin =new Thickness(item.X,item.Y,0,0),
+                            Width = item.Wid,
+                            Height = item.Hei,
+                            Foreground = Title_Label.Foreground
                         };
                         Design_Grid.Children.Add(label);
                         break;
@@ -70,10 +74,28 @@ namespace Win_Design.Controls.Design_Controls
                             Width = item.Wid,
                             Height = item.Hei,
                             HorizontalAlignment = HorizontalAlignment.Left,
-                            VerticalAlignment = VerticalAlignment.Top
+                            VerticalAlignment = VerticalAlignment.Top,
                         };
-                        // 绑定命令到按钮的Click事件
                         Design_Grid.Children.Add(button);
+                        break;
+                    case "TextBox":
+                        TextBox TextBox = new TextBox
+                        {
+                            Name = item.Name,
+                            Text = item.Text,
+                            HorizontalAlignment = HorizontalAlignment.Left,
+                            VerticalAlignment = VerticalAlignment.Top,
+                            //IsEnabled = false,
+                            Width = item.Wid,
+                            Height = item.Hei,
+                            Margin = new Thickness(item.X, item.Y, 0, 0),
+                            Foreground = Title_Label.Foreground
+                        };
+                        Design_Grid.Children.Add(TextBox);
+                        break;
+                    default:
+                        iNKORE.UI.WPF.Modern.Controls.
+                            MessageBox.Show($"未知控件 {item.Name}\n类型 {item.Type}\n\n遇到此类问题请检查设计文件\n如无法排查请联系开发者或将软件更新到最新版本", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
                         break;
                 }
             }

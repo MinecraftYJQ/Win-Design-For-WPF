@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:Win_Design.Controls.Design_Controls"
              mc:Ignorable="d" Height="250" Width="320">
     <Grid>
-        <Grid x:Name="Title_Grid" Height="32" VerticalAlignment="Top" Background="Black" d:LayoutOverrides="VerticalAlignment">
-            <Label x:Name="Title_Label" Content="Main Window" VerticalContentAlignment="Center" Margin="10,0,5,0" Foreground="White" Background="Black" MouseUp="Label_MouseUp"/>
+        <Grid x:Name="Title_Grid" Height="32" VerticalAlignment="Top" Background="#FF292929" d:LayoutOverrides="VerticalAlignment">
+            <Label x:Name="Title_Label" Content="Main Window" VerticalContentAlignment="Center" Margin="10,0,5,0" Foreground="#FFE2E2E2" Background="{x:Null}" MouseUp="Label_MouseUp"/>
         </Grid>
-        <Grid x:Name="Design_Grid" Background="Black" Margin="0,37,0,0"/>
+        <Grid x:Name="Design_Grid" Background="#FF292929" Margin="0,37,0,0"/>
     </Grid>
 </UserControl>

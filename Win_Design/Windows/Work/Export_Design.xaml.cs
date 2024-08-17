@@ -23,5 +23,17 @@ namespace Win_Design.Windows.Work
         {
             InitializeComponent();
         }
+        public void Set_JD_Value_Init(int max)
+        {
+            JD_Bar.Maximum = max;
+            JD_Bar.Minimum = 0;
+        }
+        public void Set_JD_Value_Add()
+        {
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                JD_Bar.Value = JD_Bar.Value + 1;
+            }));
+        }
     }
 }

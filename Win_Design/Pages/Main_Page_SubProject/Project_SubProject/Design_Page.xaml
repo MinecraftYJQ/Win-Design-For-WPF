@@ -11,7 +11,7 @@
       Title="Design_Page">
 
     <Grid>
-        <ScrollViewer x:Name="Plane" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="0,40,160,0" Background="#B22B2B2B"/>
+        <ScrollViewer x:Name="Plane" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="0,40,160,0" Background="#332B2B2B"/>
         <design_controls:Tools_Box Margin="0,40,0,0" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Right" Width="160"/>
         <Menu Height="40" VerticalAlignment="Top">
             <MenuItem Header="文件">
@@ -27,6 +27,5 @@
                 <MenuItem Header="重做"/>
             </MenuItem>
         </Menu>
-    
     </Grid>
 </Page>
