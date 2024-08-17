@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using Win_Design.Controls.Design_Controls.Demo_Controls;
+using Win_Design.Cs.Custom_Type;
 using Win_Design.Windows.Work;
 using static Win_Design.Cs.API.Json.Json;
 
@@ -13,7 +15,7 @@ namespace Win_Design.Cs.Project.Save_Project
 {
     class Save_Project
     {
-        public static void Save_Design_File(List<Control> Items)
+        public static void Save_Design_File(List<System.Windows.Controls.Control> Items)
         {
             Export_Design export_Design = new Export_Design();
             export_Design.Set_JD_Value_Init(Items.Count);
@@ -21,62 +23,62 @@ namespace Win_Design.Cs.Project.Save_Project
             {
                 Thread.Sleep(300);
                 List<WindowItem> windowItems = new List<WindowItem>();
-                foreach (Control item in Items)
+                foreach (System.Windows.Controls.Control item in Items)
                 {
-                    if (item.GetType() == typeof(TextBox))
+                    Cs.API.Log.Logs.WriteLine("类型:"+item.ToString());
+                    switch (item.GetType().ToString().Replace("Win_Design.Controls.Design_Controls.Demo_Controls.", ""))
                     {
-                        TextBox textBox = (TextBox)item;
-                        textBox.Dispatcher.Invoke(new Action(() =>
-                        {
-                            windowItems.Add(new WindowItem
+                        case "Button":
+                            Controls.Design_Controls.Demo_Controls.Button button = (Controls.Design_Controls.Demo_Controls.Button)item;
+                            button.Dispatcher.Invoke(new Action(() =>
                             {
-                                Name = item.Name,
-                                Text = (string)textBox.Text,
-                                Type = "TextBox",
-                                X = (int)item.Margin.Left,
-                                Y = (int)item.Margin.Top,
-                                Wid = (int)item.Width,
-                                Hei = (int)item.Height
-                            });
-                        }));
-                    }
-                    else
-                    {
-                        switch (item.GetType().ToString().Replace("System.Windows.Controls.", ""))
-                        {
-                            case "Button":
-                                Button button = (Button)item;
-                                button.Dispatcher.Invoke(new Action(() =>
+                                Num num = button.GetNum();
+                                windowItems.Add(new WindowItem
                                 {
-                                    windowItems.Add(new WindowItem
-                                    {
-                                        Name = item.Name,
-                                        Text = (string)button.Content,
-                                        Type = "Button",
-                                        X = (int)item.Margin.Left,
-                                        Y = (int)item.Margin.Top,
-                                        Wid = (int)item.Width,
-                                        Hei = (int)item.Height
-                                    });
-                                }));
-                                break;
-                            case "Label":
-                                Label Label = (Label)item;
-                                Label.Dispatcher.Invoke(new Action(() =>
+                                    Name = num.Name,
+                                    Text = num.Text,
+                                    Type = "Button",
+                                    X = (int)num.X,
+                                    Y = (int)num.Y,
+                                    Wid = (int)num.Width,
+                                    Hei = (int)num.Height
+                                });
+                            }));
+                            break;
+                        case "TextBox":
+                            Controls.Design_Controls.Demo_Controls.TextBox textBox = (Controls.Design_Controls.Demo_Controls.TextBox)item;
+                            textBox.Dispatcher.Invoke(new Action(() =>
+                            {
+                                Num num = textBox.GetNum();
+                                windowItems.Add(new WindowItem
                                 {
-                                    windowItems.Add(new WindowItem
-                                    {
-                                        Name = item.Name,
-                                        Text = (string)Label.Content,
-                                        Type = "Label",
-                                        X = (int)item.Margin.Left,
-                                        Y = (int)item.Margin.Top,
-                                        Wid = (int)item.Width,
-                                        Hei = (int)item.Height
-                                    });
-                                }));
-                                break;
-                        }
+                                    Name = num.Name,
+                                    Text = num.Text,
+                                    Type = "TextBox",
+                                    X = (int)num.X,
+                                    Y = (int)num.Y,
+                                    Wid = (int)num.Width,
+                                    Hei = (int)num.Height
+                                });
+                            }));
+                            break;
+                        case "Label":
+                            Controls.Design_Controls.Demo_Controls.Label label = (Controls.Design_Controls.Demo_Controls.Label)item;
+                            label.Dispatcher.Invoke(new Action(() =>
+                            {
+                                Num num = label.GetNum();
+                                windowItems.Add(new WindowItem
+                                {
+                                    Name = num.Name,
+                                    Text = num.Text,
+                                    Type = "Label",
+                                    X = (int)num.X,
+                                    Y = (int)num.Y,
+                                    Wid = (int)num.Width,
+                                    Hei = (int)num.Height
+                                });
+                            }));
+                            break;
                     }
                     export_Design.Set_JD_Value_Add();
                     Thread.Sleep(10);

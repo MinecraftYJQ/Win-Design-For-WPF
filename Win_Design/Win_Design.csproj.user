@@ -9,6 +9,15 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\Design_Controls\Demo_Controls\Button.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Design_Controls\Demo_Controls\Label.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Design_Controls\Demo_Controls\TextBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\Design_Controls\Design_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -50,6 +59,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\Design_Controls\Demo_Controls\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Design_Controls\Demo_Controls\Label.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Design_Controls\Demo_Controls\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\Design_Controls\Design_Window.xaml">
       <SubType>Designer</SubType>
     </Page>

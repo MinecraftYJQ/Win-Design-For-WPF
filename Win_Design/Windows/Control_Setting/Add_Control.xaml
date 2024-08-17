@@ -9,19 +9,21 @@
         ui:WindowHelper.SystemBackdropType="Mica"
         ui:WindowHelper.UseModernWindowStyle="True"
         ui:TitleBar.Height="36"
-        Title="添加控件" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+        Title="添加控件" Height="320" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="控件名称：" Margin="10,17,0,0" HorizontalAlignment="Left" Width="70" Height="18" VerticalAlignment="Top"/>
         <TextBox x:Name="Control_Name" Margin="80,10,10,0" TextWrapping="Wrap" Text="NewControl" Height="32" VerticalAlignment="Top"/>
         <Label Content="控件长度：" Margin="10,54,0,0" HorizontalAlignment="Left" Width="70" Height="18" VerticalAlignment="Top"/>
-        <TextBox x:Name="Control_Width" Margin="80,47,10,0" TextWrapping="Wrap" Text="50" Height="32" VerticalAlignment="Top"/>
+        <TextBox x:Name="Control_Width" Margin="80,47,10,0" TextWrapping="Wrap" Text="80" Height="32" VerticalAlignment="Top"/>
         <Label Content="控件宽度：" Margin="10,91,0,0" HorizontalAlignment="Left" Width="70" Height="18" VerticalAlignment="Top"/>
-        <TextBox x:Name="Control_Height" Margin="80,84,10,0" TextWrapping="Wrap" Text="30" Height="32" VerticalAlignment="Top"/>
+        <TextBox x:Name="Control_Height" Margin="80,84,10,0" TextWrapping="Wrap" Text="50" Height="32" VerticalAlignment="Top"/>
         <Label Content="控件X：" Margin="10,128,0,0" HorizontalAlignment="Left" Width="70" VerticalAlignment="Top"/>
         <TextBox x:Name="Control_X" Margin="80,121,10,0" TextWrapping="Wrap" Text="10" Height="32" VerticalAlignment="Top"/>
         <Label Content="控件Y：" Margin="10,165,0,0" HorizontalAlignment="Left" Width="70" Height="18" VerticalAlignment="Top"/>
         <TextBox x:Name="Control_Y" Margin="80,158,10,0" TextWrapping="Wrap" Text="10" Height="32" VerticalAlignment="Top"/>
-        <Button Content="添加" Margin="80,0,7,10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="50" Click="Button_Click"/>
+        <Button Content="添加" Margin="80,0,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="50" Click="Button_Click"/>
+        <Label Content="控件文本：" Margin="10,202,0,0" HorizontalAlignment="Left" Width="70" Height="18" VerticalAlignment="Top"/>
+        <TextBox x:Name="Control_Text" Margin="80,195,10,0" TextWrapping="Wrap" Text="控件文本" Height="32" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

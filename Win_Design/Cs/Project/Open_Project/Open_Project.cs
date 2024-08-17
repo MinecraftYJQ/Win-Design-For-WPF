@@ -31,8 +31,9 @@ namespace Win_Design.Cs.Project.Open_Project
 
         public static bool Open_Project_Make_Design_Window(string Project_File_Path)
         {
+            Cs.API.Log.Logs.WriteLine($"初始化控件...");
             GL.design_window.Init_Window(Project_File_Path);
-
+            Cs.API.Log.Logs.WriteLine($"初始化控件完毕");
             return true;
         }
     }

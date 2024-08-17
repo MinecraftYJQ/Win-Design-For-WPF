@@ -29,23 +29,11 @@ namespace Win_Design.Pages
         public Main_Page()
         {
             InitializeComponent();
+            Cs.API.Log.Logs.WriteLine("载入主页面成功");
             Frame_Main.Navigate(Home);
             Nav.SelectedItem = NavigationViewItem_Home;
             Frames_Main = Frame_Main;
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (ThemeManager.Current.ApplicationTheme == ApplicationTheme.Dark)
-            {
-                ThemeManager.Current.ApplicationTheme = ApplicationTheme.Light;
-                File.WriteAllText("Theme", "Light");
-            }
-            else
-            {
-                ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
-                File.WriteAllText("Theme", "Dark");
-            }
+            Cs.API.Log.Logs.WriteLine("初始化子页面成功");
         }
         public static System.Windows.Controls.Frame Frames_Main;
         public Home Home = new Home();

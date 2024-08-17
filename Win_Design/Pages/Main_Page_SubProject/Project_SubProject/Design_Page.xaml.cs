@@ -56,9 +56,12 @@ namespace Win_Design.Pages.Main_Page_SubProject.Project_SubProject
                 string path = Open_Project.Open_Window_Return_Project_File();
                 if (path != "notfile")
                 {
+                    Cs.API.Log.Logs.WriteLine($"初始化设计器");
                     Design_Page design_Page = new Design_Page();
                     Main_Page.project = design_Page;
+                    Cs.API.Log.Logs.WriteLine($"载入设计器");
                     Main_Page.Frames_Main.Navigate(design_Page);
+                    Cs.API.Log.Logs.WriteLine($"载入页面");
                     Open_Project.Open_Project_Make_Design_Window(path);
                 }
             }
